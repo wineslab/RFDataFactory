@@ -97,7 +97,7 @@ def create_dataset(mat_address, pkl_path, sigmf_address, distance_list, device_l
     partition['test']= test_list    
     partition['val']= val_list
     print("lengths of partitions are:")
-    print len(train_list),len(val_list),len(test_list)
+    print(len(train_list),len(val_list),len(test_list))
     with open (pkl_path+'partition.pkl','wb') as handle:
         pickle.dump(partition,handle)
 

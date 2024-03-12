@@ -29,7 +29,7 @@ class IQDataGenerator(keras.utils.Sequence):
                 self.__add_to_cache(ex, data)
         
         # update ex_list to contain only examples with length >= slice_size
-        print 'length of ex_list before and after:'
+        print('length of ex_list before and after:')
         print len(self.ex_list)
         self.ex_list = self.data_cache.keys()
         print len(self.ex_list)
@@ -38,7 +38,7 @@ class IQDataGenerator(keras.utils.Sequence):
         # calculate total number of batches:
         total_slice_cnt = len(self.ex_list)*(self.args.stats['avg_samples']-self.args.slice_size+1)
         batch_cnt = (math.ceil(total_slice_cnt/self.args.batch_size))/float(self.args.slice_size)
-        print 'total number of batches are: '+str(int(batch_cnt))
+        print('total number of batches are: '+str(int(batch_cnt)))
         return int(batch_cnt)
 
     def __add_to_cache(self, ex, data):
@@ -102,4 +102,4 @@ if __name__ == "__main__":
 
     DG = IQDataGenerator(ex_list, args)
 
-    print DG.__getitem__(0)
+    print(DG.__getitem__(0))

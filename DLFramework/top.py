@@ -59,7 +59,7 @@ if __name__ == '__main__':
     with open(os.path.join(args.partition_path,'partition.pkl'),'rb') as handle:
         partitions = pkl.load(handle)
     print('train/val/test partitions have this many examples:')
-    print len(partitions['train']), len(partitions['val']), len(partitions['test'])
+    print(len(partitions['train']), len(partitions['val']), len(partitions['test']))
 
     # create the model
     model = create_model(args)
